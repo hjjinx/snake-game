@@ -116,7 +116,7 @@ class Main extends Component {
     var foodY = Math.floor(Math.random() * 17);
     let food = JSON.stringify(foodX) + "_" + JSON.stringify(foodY);
 
-    if (arr[foodX][foodY] !== "") this.spawnFood();
+    if (arr[foodX][foodY] !== "") this.spawnFood(this.state.GridArr);
     else {
       arr[foodX][foodY] = "F";
       this.setState({ food: food });
