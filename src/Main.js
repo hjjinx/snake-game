@@ -56,43 +56,71 @@ class Main extends Component {
     if (dir === "L") {
       if (gridClone[headX][headY - 1] === "F") {
         this.setState({ length: this.state.length + 1, foodEaten: true });
+      }
+      if (headY === 0) {
+        newArr[headX][this.cols - 1] = "SH";
+        var newPos =
+          JSON.stringify(headX) + "_" + JSON.stringify(this.cols - 1);
+        this.setState({ headY: this.cols - 1 });
       } else if (gridClone[headX][headY - 1] === "S") {
         this.newGame();
         return 0;
+      } else {
+        newArr[headX][headY - 1] = "SH";
+        var newPos = JSON.stringify(headX) + "_" + JSON.stringify(headY - 1);
+        this.setState({ headY: headY - 1 });
       }
-      newArr[headX][headY - 1] = "SH";
-      var newPos = JSON.stringify(headX) + "_" + JSON.stringify(headY - 1);
-      this.setState({ headY: headY - 1 });
     } else if (dir === "U") {
-      if (gridClone[headX - 1][headY] === "F") {
-        this.setState({ length: this.state.length + 1, foodEaten: true });
+      if (headX === 0) {
+        newArr[this.rows - 1][headY] = "SH";
+        var newPos =
+          JSON.stringify(this.rows - 1) + "_" + JSON.stringify(headY);
+        this.setState({ headX: this.rows - 1 });
       } else if (gridClone[headX - 1][headY] === "S") {
         this.newGame();
         return 0;
+      } else {
+        newArr[headX - 1][headY] = "SH";
+        var newPos = JSON.stringify(headX - 1) + "_" + JSON.stringify(headY);
+        this.setState({ headX: headX - 1 });
       }
-      newArr[headX - 1][headY] = "SH";
-      var newPos = JSON.stringify(headX - 1) + "_" + JSON.stringify(headY);
-      this.setState({ headX: headX - 1 });
+      if (headX > 0)
+        if (gridClone[headX - 1][headY] === "F") {
+          this.setState({ length: this.state.length + 1, foodEaten: true });
+        }
     } else if (dir === "R") {
       if (gridClone[headX][headY + 1] === "F") {
         this.setState({ length: this.state.length + 1, foodEaten: true });
+      }
+      if (headY === this.cols - 1) {
+        newArr[headX][0] = "SH";
+        var newPos = JSON.stringify(headX) + "_" + JSON.stringify(0);
+        this.setState({ headY: 0 });
       } else if (gridClone[headX][headY + 1] === "S") {
         this.newGame();
         return 0;
+      } else {
+        newArr[headX][headY + 1] = "SH";
+        var newPos = JSON.stringify(headX) + "_" + JSON.stringify(headY + 1);
+        this.setState({ headY: headY + 1 });
       }
-      newArr[headX][headY + 1] = "SH";
-      var newPos = JSON.stringify(headX) + "_" + JSON.stringify(headY + 1);
-      this.setState({ headY: headY + 1 });
     } else if (dir === "D") {
-      if (gridClone[headX + 1][headY] === "F") {
-        this.setState({ length: this.state.length + 1, foodEaten: true });
+      if (headX === this.rows - 1) {
+        newArr[0][headY] = "SH";
+        var newPos = JSON.stringify(0) + "_" + JSON.stringify(headY);
+        this.setState({ headX: 0 });
       } else if (gridClone[headX + 1][headY] === "S") {
         this.newGame();
         return 0;
+      } else {
+        newArr[headX + 1][headY] = "SH";
+        var newPos = JSON.stringify(headX + 1) + "_" + JSON.stringify(headY);
+        this.setState({ headX: headX + 1 });
       }
-      newArr[headX + 1][headY] = "SH";
-      var newPos = JSON.stringify(headX + 1) + "_" + JSON.stringify(headY);
-      this.setState({ headX: headX + 1 });
+      if (headX < 16)
+        if (gridClone[headX + 1][headY] === "F") {
+          this.setState({ length: this.state.length + 1, foodEaten: true });
+        }
     }
 
     var newHistory = [newPos];
@@ -100,7 +128,7 @@ class Main extends Component {
     for (let j = 0; j < history.length - 1; j++) {
       if (j === history.length - 2 && this.state.foodEaten === true) {
         this.spawnFood(gridClone);
-        newHistory.push(history[j - 1]);
+        newHistory.push(history[j]);
       }
       newHistory.push(history[j]);
       let XY = newHistory[j + 1].split("_");
@@ -112,8 +140,8 @@ class Main extends Component {
   };
 
   spawnFood = arr => {
-    var foodX = Math.floor(Math.random() * 17);
-    var foodY = Math.floor(Math.random() * 17);
+    var foodX = Math.floor(Math.random() * this.rows);
+    var foodY = Math.floor(Math.random() * this.cols);
     let food = JSON.stringify(foodX) + "_" + JSON.stringify(foodY);
 
     if (arr[foodX][foodY] !== "") this.spawnFood(this.state.GridArr);
@@ -181,6 +209,7 @@ class Main extends Component {
 }
 
 function arrayClone(arr) {
+  // For a deep clone
   return JSON.parse(JSON.stringify(arr));
 }
 export default Main;
