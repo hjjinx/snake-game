@@ -1,5 +1,10 @@
-# snake-game
-Recreating the snake game in react js
+# Snake
 
-# How to run?
-Create a new react app using create-react-app. Replace the src folder with the one in the repo.
+Snake Game made using react.js as a fun project.
+https://hjjinx.github.io/snake
+
+## How to run?
+
+- Clone the repo
+- run `npm i` in the directory to install the dependencies
+- run `npm start` to run the application
