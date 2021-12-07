@@ -1,13 +1,13 @@
 {
-  "main.css": "/hjjinx/snake-game/static/css/main.e7281d7e.chunk.css",
-  "main.js": "/hjjinx/snake-game/static/js/main.99938a38.chunk.js",
-  "main.js.map": "/hjjinx/snake-game/static/js/main.99938a38.chunk.js.map",
-  "static/js/1.455d3a47.chunk.js": "/hjjinx/snake-game/static/js/1.455d3a47.chunk.js",
-  "static/js/1.455d3a47.chunk.js.map": "/hjjinx/snake-game/static/js/1.455d3a47.chunk.js.map",
-  "runtime~main.js": "/hjjinx/snake-game/static/js/runtime~main.7cec72f6.js",
-  "runtime~main.js.map": "/hjjinx/snake-game/static/js/runtime~main.7cec72f6.js.map",
-  "static/css/main.e7281d7e.chunk.css.map": "/hjjinx/snake-game/static/css/main.e7281d7e.chunk.css.map",
-  "index.html": "/hjjinx/snake-game/index.html",
-  "precache-manifest.2f98e48c2f50bca50bf53b382f80b80f.js": "/hjjinx/snake-game/precache-manifest.2f98e48c2f50bca50bf53b382f80b80f.js",
-  "service-worker.js": "/hjjinx/snake-game/service-worker.js"
+  "main.css": "/snake-game/static/css/main.e7281d7e.chunk.css",
+  "main.js": "/snake-game/static/js/main.8d849c0d.chunk.js",
+  "main.js.map": "/snake-game/static/js/main.8d849c0d.chunk.js.map",
+  "static/js/1.63a8f196.chunk.js": "/snake-game/static/js/1.63a8f196.chunk.js",
+  "static/js/1.63a8f196.chunk.js.map": "/snake-game/static/js/1.63a8f196.chunk.js.map",
+  "runtime~main.js": "/snake-game/static/js/runtime~main.351fc993.js",
+  "runtime~main.js.map": "/snake-game/static/js/runtime~main.351fc993.js.map",
+  "static/css/main.e7281d7e.chunk.css.map": "/snake-game/static/css/main.e7281d7e.chunk.css.map",
+  "index.html": "/snake-game/index.html",
+  "precache-manifest.9475ffef1d86edd0e98b32116c3fd5f5.js": "/snake-game/precache-manifest.9475ffef1d86edd0e98b32116c3fd5f5.js",
+  "service-worker.js": "/snake-game/service-worker.js"
 }
