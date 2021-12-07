@@ -1,7 +1,7 @@
 # Snake
 
 Snake Game made using react.js as a fun project.
-https://hjjinx.github.io/snake
+https://hjjinx.github.io/snake-game
 
 ## How to run?
 
